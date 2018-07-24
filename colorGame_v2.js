@@ -17,7 +17,7 @@
 	var h2span = document.querySelector(".h2span");
 
 
-
+	//MAIN PROGRAM
 	//Check if the chosen color == the right color
 	for(var i=0; i < allColor.length; i++){
 		//Give each square (allColor[i]) the random color from the randomArr func in colors[i]
@@ -67,6 +67,8 @@
 	//End of main-program loop
 	}
 
+	//FUNCTIONS
+
 	//Function: that change all colors into one color - takes the argument of the correct color and sets all squares to that color
 	const changeColor = (newAndCorrect) =>{
 		//Convert allColor to an array
@@ -79,15 +81,16 @@
 	}
 
 	//Function: change the squares to new random color - takes in the colors array as argument (here referred to as newRandomColors) with the random number functions
-	function changeColorBack(newRandomColors){
-		for(i = 0; i < allColor.length; i++){
+	const changeColorBack = (newRandomColors) =>{
+		allColor.map((element, index) => {
+			allColor = [...allColor];
 			//Set each square to the new random color
-			allColor[i].style.backgroundColor = newRandomColors[i];
-			//Re-set the correctColor to a new part of the colors array
+			allColor[index].style.backgroundColor = newRandomColors[index];
+			//Re-set the correctColor to a new part of the colors array (color[0-5])
 			correctColor = newRandomColors[Math.floor(Math.random()*6)];
 			//Update the correct color on display
 			correct.textContent = correctColor;
-		}
+		});
 	}
 	// //Initialize global variable
 	// var arr = [];
