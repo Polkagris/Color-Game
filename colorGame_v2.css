@@ -1,11 +1,10 @@
 
 body{
 	background-color: #232323;
-	margin-top: 0; 
+	margin-top: 0;
 	margin-left: 0;
 	margin-right: 0;
 }
-
 .displayH1{
 	text-align: center;
 	background-color: #ccd4e2;
@@ -17,7 +16,6 @@ body{
 p {
 	margin: 0;
 }
-
 button{
 	border: none;
 	float: left;
@@ -27,17 +25,14 @@ button{
 	font-size: 15px;
 	line-height: 45px;
 }
-
 button:hover{
-	background-color: #516482; 
+	background-color: #516482;
 }
-
 h1{
 	color: #516482;
 	font-family: 'Raleway';
 	font-size: 50px;
 }
-
 h2{
 	text-align: center;
 	background-color: #414a5b;
@@ -47,22 +42,17 @@ h2{
 	padding-top: 20px;
 	font-family: 'Raleway';
 	margin-bottom: 20px;
-
-
 }
-
 .h2display{
 	background-color: #232323;
 	color: white;
 }
-
 .container{
 	max-width: 600px;
 	padding-bottom: 30%;
 	margin: 0 auto;
 
 }
-
 .square{
 	margin: 1.66%;
 	width: 30%;
@@ -70,7 +60,6 @@ h2{
 	float: left;
 	padding-bottom: 30%;
 	border-radius: 25px;
-    border: 0.001px solid #232323;
-    transition: background-color 0.5s;
-
+  border: 0.001px solid #232323;
+  transition: background-color 0.5s;
 }

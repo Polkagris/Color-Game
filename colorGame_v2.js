@@ -3,7 +3,7 @@
 	var allColor = document.querySelectorAll(".square"); 	//put array of all squares into allColor variable
 
 	//Different color-indicators
-	var correctColor;
+	var correctColor = [];
 	var pickedColor = 0;
 	var winningColor = document.querySelector("h2");
 	var losingColor = document.querySelector("h2");
@@ -68,11 +68,14 @@
 	}
 
 	//Function: that change all colors into one color - takes the argument of the correct color and sets all squares to that color
-	function changeColor(oneColor){
-		for(i = 0; i < allColor.length; i++){
+	const changeColor = (newAndCorrect) =>{
+		//Convert allColor to an array
+		allColor = [...allColor];
+		//Map out each element to equal the correct color
+		allColor.map((element, index) =>{
 			//For each square set it's color to the correct color
-			allColor[i].style.backgroundColor = oneColor;
-		}
+			allColor[index].style.backgroundColor = newAndCorrect;
+		});
 	}
 
 	//Function: change the squares to new random color - takes in the colors array as argument (here referred to as newRandomColors) with the random number functions
@@ -112,3 +115,20 @@
 		//Array of six strings
 		return arr;
 	}
+
+//TEST
+// 	let allColor = [7,8,9,4,5];
+// let word = ["yes"];
+// const blueColor = ["r", "e", "d"];
+//
+// const changeColor = (oneColor) =>{
+// 	oneColor.map(element => {
+// 		element = [...element];
+// 		element.push(word);
+//  // [...element].push('word');
+// 	console.log(typeof element);
+// 	console.log(element);
+// 	});
+// }
+//
+// 		console.log("The function returned "+changeColor(blueColor));
