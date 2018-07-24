@@ -1,20 +1,20 @@
 	//The colored squares
-	var colors = [randomArr(), randomArr(), randomArr(), randomArr(), randomArr(), randomArr()];
-	var allColor = document.querySelectorAll(".square"); 	//put array of all squares into allColor variable
+	let colors = [randomArr(), randomArr(), randomArr(), randomArr(), randomArr(), randomArr()];
+	let allColor = document.querySelectorAll(".square"); 	//put array of all squares into allColor variable
 
 	//Different color-indicators
-	var correctColor = [];
-	var pickedColor = 0;
-	var winningColor = document.querySelector("h2");
-	var losingColor = document.querySelector("h2");
+	let correctColor = [];
+	let pickedColor = 0;
+	let winningColor = document.querySelector("h2");
+	let losingColor = document.querySelector("h2");
 
 	//Display tags
-	var h2 = document.querySelector("h2");
-	var correct = document.querySelector("#correct");
-	var header2 = document.querySelector("h2 span");
-	var h2display = document.querySelector(".h2display");
-	var h1 = document.querySelector(".displayH1");
-	var h2span = document.querySelector(".h2span");
+	let h2 = document.querySelector("h2");
+	let correct = document.querySelector("#correct");
+	let header2 = document.querySelector("h2 span");
+	let h2display = document.querySelector(".h2display");
+	let h1 = document.querySelector(".displayH1");
+	let h2span = document.querySelector(".h2span");
 
 
 	//MAIN PROGRAM
@@ -27,7 +27,8 @@
 		//Display correct color
 		correct.textContent = correctColor;
 
-		//When correct: turn color of allColor[i] to background color
+
+		//EVENT LISTENER: When correct: turn color of allColor[i] to background color
 		allColor[i].addEventListener("click", function(){
 			//Set backgroundcolor of pickedColor to the clicked square
 			pickedColor = this.style.backgroundColor;
@@ -42,7 +43,6 @@
 				 	changeColor(correctColor);
 					//Make the background color in the header the same as correctColor
 				 	h1.style.backgroundColor = correctColor;
-
 				//If pickedColor is not the same as correctColor
 			 	}
 				else{
@@ -51,7 +51,8 @@
 			 		this.style.backgroundColor = "rgb(35, 35, 35)";
 			  }
 
-					//Event for resetting the game with a button
+
+					//EVENT LISTENER: Event for resetting the game with a button
 			  	retryButton.addEventListener("click", function(){
 						//Resets the colors array to new random numbers by calling the function inside the array
 			  		colors = [randomArr(), randomArr(), randomArr(), randomArr(), randomArr(), randomArr()];
@@ -61,13 +62,12 @@
 					 	h1.style.backgroundColor = "#ccd4e2";					//Reset background
 					 	losingColor.style.color = "#414a5b";				//Make text turn to blue
 					});
-
 					losingColor.style.color = "white";						//Make text turn back to white
 		});
 	//End of main-program loop
 	}
 
-	//FUNCTIONS
+	//FUNCTIONS -------------------------------------------------
 
 	//Function: that change all colors into one color - takes the argument of the correct color and sets all squares to that color
 	const changeColor = (newAndCorrect) =>{
@@ -92,10 +92,9 @@
 			correct.textContent = correctColor;
 		});
 	}
-	// //Initialize global variable
-	// var arr = [];
+
 	//Function: create random number for r, g and b - pass numbers as strings into colorString wich functions as a rgb color string
-	function randomRgb() {
+	function randomRgb(){
 		//Red
 		var r =  Math.floor(Math.random() * 256);
 		//Green
